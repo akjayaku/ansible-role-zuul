@@ -13,14 +13,11 @@
     parent: ansible-role-zuul-base
 
 - job:
-    name: ansible-role-zuul-fedora-latest
-    parent: ansible-role-zuul
-    nodeset: fedora-latest
-
-- job:
     name: ansible-role-zuul-ubuntu-bionic
     parent: ansible-role-zuul
     nodeset: ubuntu-bionic
+    vars:
+      zuul_pip_version: 3.19.1
 
 # Testing for zuul_install_method: git
 - job:
@@ -33,30 +30,20 @@
       zuul_install_method: git
 
 - job:
-    name: ansible-role-zuul-src-fedora-latest
-    parent: ansible-role-zuul-src
-    nodeset: fedora-latest
-
-- job:
     name: ansible-role-zuul-src-ubuntu-bionic
     parent: ansible-role-zuul-src
     nodeset: ubuntu-bionic
 
 - project:
     templates:
-      - windmill-jobs-fedora-latest
       - windmill-jobs-bionic
     check:
       jobs:
-        - ansible-role-zuul-fedora-latest
         - ansible-role-zuul-ubuntu-bionic
-        - ansible-role-zuul-src-fedora-latest
-        - ansible-role-zuul-src-ubuntu-bionic
+        - ansible-role-zuul-src-ubuntu-bionic:
+            voting: false
         - tox-linters
     gate:
       jobs:
-        - ansible-role-zuul-fedora-latest
         - ansible-role-zuul-ubuntu-bionic
-        - ansible-role-zuul-src-fedora-latest
-        - ansible-role-zuul-src-ubuntu-bionic
         - tox-linters
