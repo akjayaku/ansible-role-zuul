@@ -95,6 +95,27 @@ zuul_file_web_logging_conf_mode: 0644
 zuul_file_web_logging_conf_owner: "{{ zuul_user_name }}"
 zuul_file_web_logging_conf_src: etc/zuul/web-logging.conf
 
+zuul_file_zookeeper_tls_cacert_content:
+zuul_file_zookeeper_tls_cacert_dest: /etc/zuul/ssl/zookeeper-cacert.pem
+zuul_file_zookeeper_tls_cacert_group: "{{ zuul_user_group }}"
+zuul_file_zookeeper_tls_cacert_mode: 0644
+zuul_file_zookeeper_tls_cacert_owner: "{{ zuul_user_name }}"
+zuul_file_zookeeper_tls_cacert_src: etc/zuul/ssl/zookeeper-cacert.pem
+
+zuul_file_zookeeper_tls_cert_content:
+zuul_file_zookeeper_tls_cert_dest: /etc/zuul/ssl/zookeeper-client.pem
+zuul_file_zookeeper_tls_cert_group: "{{ zuul_user_group }}"
+zuul_file_zookeeper_tls_cert_mode: 0644
+zuul_file_zookeeper_tls_cert_owner: "{{ zuul_user_name }}"
+zuul_file_zookeeper_tls_cert_src: etc/zuul/ssl/zookeeper-client.pem
+
+zuul_file_zookeeper_tls_key_content:
+zuul_file_zookeeper_tls_key_dest: /etc/zuul/ssl/zookeeper-client.key
+zuul_file_zookeeper_tls_key_group: "{{ zuul_user_group }}"
+zuul_file_zookeeper_tls_key_mode: 0600
+zuul_file_zookeeper_tls_key_owner: "{{ zuul_user_name }}"
+zuul_file_zookeeper_tls_key_src: etc/zuul/ssl/zookeeper-client.key
+
 zuul_file_zuul_conf_dest: /etc/zuul/zuul.conf
 zuul_file_zuul_conf_group: "{{ zuul_user_group }}"
 zuul_file_zuul_conf_mode: 0640

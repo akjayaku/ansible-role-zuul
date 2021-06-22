@@ -144,3 +144,33 @@
     owner: "{{ zuul_file_zuul_conf_owner }}"
     src: "{{ zuul_file_zuul_conf_src }}"
   register: zuul_file_zuul_conf
+
+- name: Install zookeeper tls cacert configuration
+  become: true
+  template:
+    dest: "{{ zuul_file_zookeeper_tls_cacert_dest }}"
+    group: "{{ zuul_file_zookeeper_tls_cacert_group }}"
+    mode: "{{ zuul_file_zookeeper_tls_cacert_mode }}"
+    owner: "{{ zuul_file_zookeeper_tls_cacert_owner }}"
+    src: "{{ zuul_file_zookeeper_tls_cacert_src }}"
+  register: zuul_file_zookeeper_tls_cacert
+
+- name: Install zuul zookeeper tls cert configuration
+  become: true
+  template:
+    dest: "{{ zuul_file_zookeeper_tls_cert_dest }}"
+    group: "{{ zuul_file_zookeeper_tls_cert_group }}"
+    mode: "{{ zuul_file_zookeeper_tls_cert_mode }}"
+    owner: "{{ zuul_file_zookeeper_tls_cert_owner }}"
+    src: "{{ zuul_file_zookeeper_tls_cert_src }}"
+  register: zuul_file_zookeeper_tls_cert
+
+- name: Install zookeeper tls key configuration
+  become: true
+  template:
+    dest: "{{ zuul_file_zookeeper_tls_key_dest }}"
+    group: "{{ zuul_file_zookeeper_tls_key_group }}"
+    mode: "{{ zuul_file_zookeeper_tls_key_mode }}"
+    owner: "{{ zuul_file_zookeeper_tls_key_owner }}"
+    src: "{{ zuul_file_zookeeper_tls_key_src }}"
+  register: zuul_file_zookeeper_tls_key
