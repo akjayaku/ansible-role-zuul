@@ -16,9 +16,6 @@
     name: ansible-role-zuul-ubuntu-bionic
     parent: ansible-role-zuul
     nodeset: ubuntu-bionic
-    vars:
-      zuul_pip_version: 3.19.1
-      zuul_pip_name: zuul[mysql_reporter]
 
 # Testing for zuul_install_method: git
 - job:
@@ -41,10 +38,10 @@
     check:
       jobs:
         - ansible-role-zuul-ubuntu-bionic
-        - ansible-role-zuul-src-ubuntu-bionic:
-            voting: false
+        - ansible-role-zuul-src-ubuntu-bionic
         - tox-linters
     gate:
       jobs:
         - ansible-role-zuul-ubuntu-bionic
+        - ansible-role-zuul-src-ubuntu-bionic
         - tox-linters
