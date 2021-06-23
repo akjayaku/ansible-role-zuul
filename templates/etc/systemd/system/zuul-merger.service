@@ -6,7 +6,7 @@ After=syslog.target network.target
 Type=simple
 Group=zuul
 User=zuul
-ExecStart={{ zuul_pip_virtualenv | default('/usr/local') }}/bin/zuul-merger -d
+ExecStart={{ zuul_pip_virtualenv | default('/usr/local') }}/bin/zuul-merger -f
 ExecStop={{ zuul_pip_virtualenv | default('/usr/local') }}/bin/zuul-merger stop
 
 [Install]

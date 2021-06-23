@@ -6,7 +6,7 @@ After=syslog.target network.target
 Type=simple
 Group=zuul
 User=zuul
-ExecStart={{ zuul_pip_virtualenv | default('/usr/local') }}/bin/zuul-web -d
+ExecStart={{ zuul_pip_virtualenv | default('/usr/local') }}/bin/zuul-web -f
 
 [Install]
 WantedBy=multi-user.target
