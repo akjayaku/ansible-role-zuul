@@ -5,6 +5,8 @@ git
 libffi-dev [platform:dpkg]
 libffi-devel [platform:rpm]
 libssl-dev [platform:dpkg]
+mysql-client [test !platform:rpm]
+mysql-server [test]
 openssl-devel [platform:rpm]
 python3-dnf [platform:fedora]
 python3-libselinux [platform:rpm]

@@ -18,6 +18,7 @@
     nodeset: ubuntu-bionic
     vars:
       zuul_pip_version: 3.19.1
+      zuul_pip_name: zuul[mysql_reporter]
 
 # Testing for zuul_install_method: git
 - job:
