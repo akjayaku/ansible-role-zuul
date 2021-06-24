@@ -8,7 +8,7 @@ Group=zuul
 User=zuul
 ExecStart={{ zuul_pip_virtualenv | default('/usr/local') }}/bin/zuul-scheduler -f
 ExecStop={{ zuul_pip_virtualenv | default('/usr/local') }}/bin/zuul-scheduler stop
-ExecReload=/bin/kill -HUP $MAINPID
+ExecReload={{ zuul_pip_virtualenv | default('/usr/local') }}/bin/zuul-scheduler full-reconfigure
 
 [Install]
 WantedBy=multi-user.target
